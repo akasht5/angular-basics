@@ -1,0 +1,31 @@
+h2{
+    margin: 10px;
+}
+
+.users-card{
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.users-card p{
+    margin: 5px 0;
+}
+
+.userlist{
+    display: flex;
+    justify-content: space-between;
+}
+
+.userlist button{
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-right: 10px;
+}

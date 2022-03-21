@@ -8,20 +8,30 @@ import { ContactComponent } from './contact/contact.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './user/user.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { PostComponent } from './post/post.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    UserComponent,
+    UserListComponent,
+    PostComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [AppComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
