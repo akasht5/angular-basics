@@ -1,53 +1,56 @@
-<div class="userlist">
-    <h2>{{ title }}</h2>
-    <button class="addUserBtn" mat-raised-button (click)="openDialog()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
-</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal addModal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form #userForm="ngForm">
+        <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm.value)">
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="userName" class="form-label">Name</label>
-                    <input type="text" [(ngModel)]="user.name" class="form-control" id="userName" placeholder="John Doe">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text"  [ngModel]="user.name" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="mb-3">
-                    <label for="userEmail" class="form-label">Email address</label>
-                    <input type="email" [(ngModel)]="user.email" class="form-control" id="userEmail" placeholder="name@example.com">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" [ngModel]="user.email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="mb-3">
-                    <label for="userUsername" class="form-label">Username</label>
-                    <input type="text" [(ngModel)]="user.username" class="form-control" id="userUsername" placeholder="johnd10">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text"  [ngModel]="user.username" class="form-control" id="username" name="username" required>
                 </div>
                 <div class="mb-3">
-                    <label for="userAddress" class="form-label">Address</label>
-                    <textarea id="userAddress" [(ngModel)]="user.address" class="form-control" cols="30" rows="3"></textarea>
+                    <label for="address" class="form-label">Address</label>
+                    <textarea [ngModel]="user.address" class="form-control" id="address" name="address" cols="30" rows="3" name="address" required></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="userPhone" [(ngModel)]="user.phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="userPhone">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" [ngModel]="user.phone"  class="form-control" id="phone" name="phone" required>
                 </div>
                 <div class="mb-3">
-                    <label for="userCompany" [(ngModel)]="user.company" class="form-label">Company</label>
-                    <input type="text" class="form-control" id="userCompany">
+                    <label for="company" class="form-label">Company</label>
+                    <input type="text" [ngModel]="user.company" class="form-control" id="company" name="company" required>
                 </div>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="newUser()">Add user</button>
+            </div>
         </form>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
       </div>
     </div>
 </div>
 
+<div class="userlist container">
+    <h2>{{ title }}</h2>
+    <a [routerLink]="['add/0']">
+        <button class="addUserBtn" mat-raised-button>Add</button>
+    </a>
+</div>
+
 <ng-container *ngFor="let user of users">
-    <div class="users-card">
+    <div class="users-card container">
+        
         <div>
             <a [routerLink]=user.id>
                 <p>Name : {{user.name}}</p>
@@ -57,8 +60,12 @@
         </div>
         <div>
             <button type="button" class="btn btn-light mx-2" (click)="deleteUser(user.username)">Delete</button>
-            <button type="button" class="btn btn-light"
-            data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+            
+                <a [routerLink]="['edit',user.username]">
+                    <button type="button" class="btn btn-light">
+                        Edit
+                    </button>
+                </a>
         </div>
     </div>
 </ng-container>

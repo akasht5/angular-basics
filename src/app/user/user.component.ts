@@ -10,7 +10,7 @@ import { UsersService } from '../users.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  id: any = null
+  /* id: any = null
   user: any = null
   sub2:any;
 
@@ -28,5 +28,10 @@ export class UserComponent implements OnInit {
 
   ngOnDestroy(){
     this.sub2.unsubscribe();
+  } */
+
+  constructor() { }
+
+  ngOnInit(): void {
   }
 }

@@ -13,6 +13,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserComponent,
     UserListComponent,
     PostComponent,
-    PostListComponent
+    PostListComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
