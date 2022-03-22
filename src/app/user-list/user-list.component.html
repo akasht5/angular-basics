@@ -1,4 +1,4 @@
-<div class="modal addModal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal addModal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -39,7 +39,7 @@
         </form>
       </div>
     </div>
-</div>
+</div> -->
 
 <div class="userlist container">
     <h2>{{ title }}</h2>
@@ -52,14 +52,14 @@
     <div class="users-card container">
         
         <div>
-            <a [routerLink]=user.id>
+            <a>
                 <p>Name : {{user.name}}</p>
             </a>
             <p>Username : {{user.username}}<p>
             <p>Email : {{user.email}}</p>
         </div>
         <div>
-            <button type="button" class="btn btn-light mx-2" (click)="deleteUser(user.username)">Delete</button>
+            <button type="button" class="btn btn-light mx-2" (click)="onDeleteUser(user.username)">Delete</button>
             
                 <a [routerLink]="['edit',user.username]">
                     <button type="button" class="btn btn-light">

@@ -1,14 +1,15 @@
 h2{
-    margin: 10px;
+    margin:0 -15px;
 }
 
 .users-card{
     border: 1px solid silver;
     border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .users-card p{
@@ -26,6 +27,4 @@ h2{
     border: 1px solid black;
     border-radius: 4px;
     background-color: #fff;
-    margin-top: 10px;
-    margin-right: 10px;
 }

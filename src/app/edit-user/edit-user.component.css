@@ -2,3 +2,11 @@
     max-width: 650px;
     margin: auto;
 }
+
+.btn-custom{
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 7px 20px;
+    margin: 10px 0;
+    border: none;
+}

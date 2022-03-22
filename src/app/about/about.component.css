@@ -1,3 +1,11 @@
 .user-card{
     border: 1px solid black;
 }
+
+h2{
+    margin: 0 -15px;
+}
+
+p{
+    margin: 5px -25px;
+}
